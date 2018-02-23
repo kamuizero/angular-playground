@@ -21,6 +21,11 @@
 <!--<p>{{serverCreationStatus}}</p>-->
 
 <!--Solucion utilizando directivas de Angular, se coloca un atributo de la clase, o una llamada a un metodo que retorna un booleano-->
-<p *ngIf="serverCreated"> El servidor fue creado. El nombre del servidor es {{ serverName }}</p>
+<p *ngIf="serverCreated; else noServer"> El servidor fue creado. El nombre del servidor es {{ serverName }}</p>
+
+<ng-template #noServer>
+  <p> No se ha creado un servidor </p>
+</ng-template>
+
 <app-server></app-server>
 <app-server></app-server>
