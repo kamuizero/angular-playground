@@ -1,0 +1,26 @@
+<label>Server Name</label>
+<!--<input-->
+  <!--type="text"-->
+  <!--class="form-control"-->
+  <!--(input)="onUpdateServerName($event)" >-->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName" >
+<!--<p>{{serverName}}</p>-->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()" >Agregar Servidor</button>
+
+<hr>
+
+<!--<p>{{allowNewServer}}</p>-->
+
+<!--Solucion utilizando metodos al presionar el boton-->
+<!--<p>{{serverCreationStatus}}</p>-->
+
+<!--Solucion utilizando directivas de Angular, se coloca un atributo de la clase, o una llamada a un metodo que retorna un booleano-->
+<p *ngIf="serverCreated"> El servidor fue creado. El nombre del servidor es {{ serverName }}</p>
+<app-server></app-server>
+<app-server></app-server>
